@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Encryptest Bridge -manshui</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Encryptest Bridge -manshui</h1>
+      <button id="refreshBtn" type="button">刷新</button>
+    </header>
+
+    <section class="card status-card">
+      <div class="row"><span>连接状态</span><strong id="connectionState">-</strong></div>
+      <div class="row"><span>运行中</span><strong id="runningCount">0</strong></div>
+      <div class="row"><span>队列长度</span><strong id="queueCount">0</strong></div>
+      <div class="row"><span>并发数</span><input id="concurrencyInput" type="number" min="1" value="1"></div>
+      <div class="row"><span>目标匹配</span><input id="targetPatternInput" type="text" placeholder="例如 *://example.com/*"></div>
+      <div class="row actions">
+        <button id="saveSettingsBtn" type="button">保存设置</button>
+        <button id="clearHistoryBtn" type="button">清空记录</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>手动测试</h2>
+      <textarea id="manualInput" rows="4" placeholder="输入字符串或 JSON"></textarea>
+      <button id="manualRunBtn" type="button">执行 encryptest</button>
+    </section>
+
+    <section class="card">
+      <h2>最近任务</h2>
+      <div id="taskList" class="task-list"></div>
+    </section>
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+window.encryptest = function(password) {
+    return CryptoJS.AES.encrypt(password, key, {
+			iv: iv,
+			mode: CryptoJS.mode.CBC,
+			padding: CryptoJS.pad.Pkcs7
+		})
+		.toString();
+};
+
+
+
